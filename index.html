@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>weather-application</title>
+  <link rel="stylesheet" href="src/index.css">
+</head>
+
+<body>
+  <div id="app" class="flex flex-col items-center
+  justify-center gap-12 h-screen bg-gray-400">
+    <!-- Search -->
+
+    <form class="max-w-md w-full">
+      <label for="default-search" class="mb-2 text-sm font-medium text-gray-900 sr-only">Search</label>
+      <div class="relative">
+        <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
+          <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+            fill="none" viewBox="0 0 20 20">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
+          </svg>
+        </div>
+        <input type="search" id="default-search"
+          class="block w-full p-4 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg shadow-lg bg-white focus:ring-blue-500 focus:border-blue-500"
+          placeholder="Search Mockups, Logos..." required />
+        <button type="submit"
+          class="text-white absolute end-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Search</button>
+      </div>
+    </form>
+
+    <!-- Weather component -->
+    <div id="weather-component" class="flex-col bg-white rounded-xl p-4 w-full max-w-sm shadow-2xl hidden">
+      <div id="city-name" class="font-bold text-xl"></div>
+      <div id="current-date" class="text-sm text-gray-500"></div>
+      <div
+        class="mt-6 text-6xl self-center inline-flex items-center justify-center rounded-lg text-indigo-400 h-24 w-24">
+        <svg class="w-32 h-32" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"></path>
+        </svg>
+      </div>
+      <div class="flex flex-row items-center justify-center mt-6">
+        <div id="temp" class="font-medium text-6xl"></div>
+        <div class="flex flex-col items-center ml-6">
+          <div id="weather-status"></div>
+          <div class="mt-1">
+            <span class="text-sm"><i class="far fa-long-arrow-up"></i></span>
+            <span id="max-temp" class="text-sm font-light text-gray-500"></span>
+          </div>
+          <div>
+            <span class="text-sm"><i class="far fa-long-arrow-down"></i></span>
+            <span id="min-temp" class="text-sm font-light text-gray-500"></span>
+          </div>
+        </div>
+      </div>
+      <div class="flex flex-row justify-between mt-6">
+        <div class="flex flex-col items-center">
+          <div class="font-medium text-sm">Wind</div>
+          <div id="wind-speed" class="text-sm text-gray-500"></div>
+        </div>
+        <div class="flex flex-col items-center">
+          <div class="font-medium text-sm">Humidity</div>
+          <div id="humidity" class="text-sm text-gray-500"></div>
+        </div>
+        <div class="flex flex-col items-center">
+          <div class="font-medium text-sm">Desc</div>
+          <div id="desc" class="text-sm text-gray-500"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script type="text/javascript" src="/src/main.js"></script>
+</body>
+
+</html>
