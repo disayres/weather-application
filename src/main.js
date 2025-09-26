@@ -64,12 +64,13 @@ const getDate = () => {
   let dayOfWeek = weekdays[date.getDay()]
   let year = date.getFullYear();
 
-  currentDate.innerHTML = `${dayOfWeek} ${dayOfMonth} ${month} ${year}`
+  return `${dayOfWeek} ${dayOfMonth} ${month} ${year}`
 }
 
 const showCityWeather = (city) => {
   weatherComp.classList.replace("hidden", "flex")
   cityName.innerHTML = `${city.name}, ${city.sys.country}`
+  currentDate.innerHTML = getDate()
   cityTemp.innerHTML = `${Math.floor(city.main.temp)}°`
   cityWeatherStatus.innerHTML = city.weather[0].main
   cityMaxTemp.innerHTML = `${Math.floor(city.main.temp_max)}°C`
@@ -78,9 +79,6 @@ const showCityWeather = (city) => {
   cityHumidity.innerHTML = `${city.main.humidity}%`
   cityWeatherDesc.innerHTML = `${city.weather[0].description}`
   getDate()
-
-  console.log(city);
-
 }
 
 form.addEventListener("submit", (e) => {
